@@ -6,6 +6,7 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 /**
  *
  * @author eltho
@@ -13,8 +14,8 @@ import java.sql.DriverManager;
 public class ConnectionProvider {
     public static Connection getCon(){
         try{
-            Class.forName("com.mysql.jbdc.Driver");
-            Connection con = DriverManager.getConnection("jbdc:mysql://localhost:3306/inventory?useSSL=false","root","Ton28020!");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory?useSSL=false","root","Ton28020!");
             return con;
         }
         catch(Exception e){
