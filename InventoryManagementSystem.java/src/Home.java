@@ -36,10 +36,10 @@ public class Home extends javax.swing.JFrame {
     private void initComponents() {
 
         btnUser = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        BtnCategory = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -57,21 +57,26 @@ public class Home extends javax.swing.JFrame {
                 btnUserActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 106, -1));
+        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 106, -1));
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(0, 0, 0));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/category.png"))); // NOI18N
-        jButton2.setText("Category");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 20, -1, -1));
+        BtnCategory.setBackground(new java.awt.Color(255, 255, 255));
+        BtnCategory.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        BtnCategory.setForeground(new java.awt.Color(0, 0, 0));
+        BtnCategory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/category.png"))); // NOI18N
+        BtnCategory.setText("Category");
+        BtnCategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCategoryActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 150, -1));
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 0, 0));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/product.png"))); // NOI18N
         jButton3.setText("Product");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 140, -1));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -83,26 +88,26 @@ public class Home extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 160, -1));
 
-        jButton6.setBackground(new java.awt.Color(255, 255, 255));
-        jButton6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton6.setForeground(new java.awt.Color(0, 0, 0));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit.png"))); // NOI18N
-        jButton6.setText("Logout");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        btnLogout.setBackground(new java.awt.Color(255, 255, 255));
+        btnLogout.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnLogout.setForeground(new java.awt.Color(0, 0, 0));
+        btnLogout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Exit.png"))); // NOI18N
+        btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                btnLogoutActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 20, 133, -1));
+        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, 133, -1));
 
         jButton7.setBackground(new java.awt.Color(255, 255, 255));
         jButton7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(0, 0, 0));
         jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Orders.png"))); // NOI18N
         jButton7.setText("View Order");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 20, 155, -1));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(845, 10, 170, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home_background.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -119,14 +124,19 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
         int a = JOptionPane.showConfirmDialog(null,"Gostaria de deslogar ?","Selecione",JOptionPane.YES_NO_OPTION);
         if(a==0){
             setVisible(false);
             new login().setVisible(true);
         }
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_btnLogoutActionPerformed
+
+    private void BtnCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCategoryActionPerformed
+        // TODO add your handling code here:
+        new ManageCategory().setVisible(true);
+    }//GEN-LAST:event_BtnCategoryActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,11 +174,11 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnCategory;
+    private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnUser;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
