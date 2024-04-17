@@ -37,7 +37,7 @@ public class Home extends javax.swing.JFrame {
 
         btnUser = new javax.swing.JButton();
         BtnCategory = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnProduct = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
@@ -71,12 +71,17 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(BtnCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 150, -1));
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 0));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/product.png"))); // NOI18N
-        jButton3.setText("Product");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 140, -1));
+        btnProduct.setBackground(new java.awt.Color(255, 255, 255));
+        btnProduct.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnProduct.setForeground(new java.awt.Color(0, 0, 0));
+        btnProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/product.png"))); // NOI18N
+        btnProduct.setText("Product");
+        btnProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProductActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 140, -1));
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -138,6 +143,11 @@ public class Home extends javax.swing.JFrame {
         new ManageCategory().setVisible(true);
     }//GEN-LAST:event_BtnCategoryActionPerformed
 
+    private void btnProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductActionPerformed
+        // TODO add your handling code here:
+        new ManageProduct().setVisible(true);
+    }//GEN-LAST:event_btnProductActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -176,8 +186,8 @@ public class Home extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCategory;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnProduct;
     private javax.swing.JButton btnUser;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
