@@ -38,7 +38,7 @@ public class Home extends javax.swing.JFrame {
         btnUser = new javax.swing.JButton();
         BtnCategory = new javax.swing.JButton();
         btnProduct = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnCustomer = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -83,17 +83,17 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(btnProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 140, -1));
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 0));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customers.png"))); // NOI18N
-        jButton4.setText("Customer");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnCustomer.setBackground(new java.awt.Color(255, 255, 255));
+        btnCustomer.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnCustomer.setForeground(new java.awt.Color(0, 0, 0));
+        btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customers.png"))); // NOI18N
+        btnCustomer.setText("Customer");
+        btnCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnCustomerActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 160, -1));
+        getContentPane().add(btnCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 160, -1));
 
         btnLogout.setBackground(new java.awt.Color(255, 255, 255));
         btnLogout.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -125,9 +125,10 @@ public class Home extends javax.swing.JFrame {
         new ManageUser().setVisible(true);
     }//GEN-LAST:event_btnUserActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+        new ManageCustomer().setVisible(true);
+    }//GEN-LAST:event_btnCustomerActionPerformed
 
     private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
         // TODO add your handling code here:
@@ -185,10 +186,10 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnCategory;
+    private javax.swing.JButton btnCustomer;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnProduct;
     private javax.swing.JButton btnUser;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
