@@ -65,15 +65,15 @@ public class ManageCategory extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Impact", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Manage Category");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(293, 19, 287, -1));
+        jLabel1.setText("Organizar categorias");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 380, -1));
 
         tableCategory.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Name"
+                "ID", "Nome"
             }
         ));
         tableCategory.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -87,7 +87,7 @@ public class ManageCategory extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Name");
+        jLabel2.setText("Nome");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 187, 41, -1));
 
         txtName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -99,7 +99,7 @@ public class ManageCategory extends javax.swing.JFrame {
         getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 220, 368, -1));
 
         btnSave.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSave.setText("Save");
+        btnSave.setText("Salvar");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
@@ -108,7 +108,7 @@ public class ManageCategory extends javax.swing.JFrame {
         getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(465, 261, 80, -1));
 
         btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnUpdate.setText("Update");
+        btnUpdate.setText("Atualizar");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
@@ -117,7 +117,7 @@ public class ManageCategory extends javax.swing.JFrame {
         getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(563, 261, 80, -1));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnReset.setText("Reset");
+        btnReset.setText("Recarregar");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
@@ -126,7 +126,7 @@ public class ManageCategory extends javax.swing.JFrame {
         getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(664, 261, 80, -1));
 
         btnClose.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnClose.setText("Close");
+        btnClose.setText("Fechar");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCloseActionPerformed(evt);
@@ -165,7 +165,7 @@ public class ManageCategory extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name = txtName.getText();
         if(validateFields()){
-            JOptionPane.showMessageDialog(null,"All fields are required");
+            JOptionPane.showMessageDialog(null,"Todos os campos sao necessarios!");
         }
         else{
             try{
@@ -173,7 +173,7 @@ public class ManageCategory extends javax.swing.JFrame {
                 PreparedStatement ps = con.prepareStatement("insert into category (name) values(?)");
                 ps.setString(1,name);
                 ps.executeUpdate();
-                JOptionPane.showMessageDialog(null,"Category Added Sucessfully");
+                JOptionPane.showMessageDialog(null,"Categoria adicionada com sucesso!");
                 setVisible(false);
                 new ManageCategory().setVisible(true);
             }
@@ -211,7 +211,7 @@ public class ManageCategory extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name = txtName.getText();
         if(validateFields()){
-            JOptionPane.showMessageDialog(null,"All fields are required");
+            JOptionPane.showMessageDialog(null,"Todos os campos sao necessarios!");
         }
         else{
             try{
@@ -220,7 +220,7 @@ public class ManageCategory extends javax.swing.JFrame {
                 ps.setString(1,name);
                 ps.setInt(2, categoryPk);
                 ps.executeUpdate();
-                JOptionPane.showMessageDialog(null,"Category Updated Sucessfully");
+                JOptionPane.showMessageDialog(null,"Categoria atualizada com sucesso!");
                 setVisible(false);
                 new ManageCategory().setVisible(true);
             }

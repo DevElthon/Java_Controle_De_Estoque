@@ -70,7 +70,7 @@ public class ManageCustomer extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Impact", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Manage Customer");
+        jLabel1.setText("Organizar Clientes");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 16, 315, -1));
 
         tableCustomer.setModel(new javax.swing.table.DefaultTableModel(
@@ -78,7 +78,7 @@ public class ManageCustomer extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Name", "Mobile Number", "Email"
+                "ID", "Nome", "Telefone", "Email"
             }
         ));
         tableCustomer.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -92,7 +92,7 @@ public class ManageCustomer extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Name");
+        jLabel2.setText("Nome");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 142, 330, -1));
 
         txtName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -105,7 +105,7 @@ public class ManageCustomer extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Mobile Number");
+        jLabel3.setText("Telefone");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 216, 330, -1));
 
         txtMobileNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -125,7 +125,7 @@ public class ManageCustomer extends javax.swing.JFrame {
         getContentPane().add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 323, 330, -1));
 
         btnSave.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSave.setText("Save");
+        btnSave.setText("Salvar");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
@@ -134,7 +134,7 @@ public class ManageCustomer extends javax.swing.JFrame {
         getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 374, 70, -1));
 
         btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnUpdate.setText("Update");
+        btnUpdate.setText("Atualizar");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
@@ -143,16 +143,16 @@ public class ManageCustomer extends javax.swing.JFrame {
         getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(577, 374, 72, -1));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnReset.setText("Reset");
+        btnReset.setText("Recarregar");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
             }
         });
-        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(661, 374, 74, -1));
+        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(661, 374, 80, -1));
 
         btnClose.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnClose.setText("Close");
+        btnClose.setText("Fechar");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCloseActionPerformed(evt);
@@ -161,7 +161,7 @@ public class ManageCustomer extends javax.swing.JFrame {
         getContentPane().add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(753, 374, 72, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/All_page_Background.png"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -211,7 +211,7 @@ public class ManageCustomer extends javax.swing.JFrame {
         String email = txtEmail.getText();
         
         if(validateFields()){
-            JOptionPane.showMessageDialog(null, "All fields are required");
+            JOptionPane.showMessageDialog(null, "Todos os campos sao necessarios!");
         }
         else{
             try{
@@ -221,7 +221,7 @@ public class ManageCustomer extends javax.swing.JFrame {
                 ps.setString(2, mobileNumber);
                 ps.setString(3, email);
                 ps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Customer added successfully");
+                JOptionPane.showMessageDialog(null, "Cliente adicionado com sucesso!");
                 setVisible(false);
                 new ManageCustomer().setVisible(true);
             }
@@ -258,7 +258,7 @@ public class ManageCustomer extends javax.swing.JFrame {
         String email = txtEmail.getText();
         
         if(validateFields()){
-            JOptionPane.showMessageDialog(null, "All fields are required");
+            JOptionPane.showMessageDialog(null, "Todos os campos sao necessarios!");
         }
         else{
             try{
@@ -270,7 +270,7 @@ public class ManageCustomer extends javax.swing.JFrame {
                 ps.setString(3, email);
                 ps.setInt(4, customerPk);
                 ps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Customer updated successfully");
+                JOptionPane.showMessageDialog(null, "Cliente atualizado com sucesso");
                 setVisible(false);
                 new ManageCustomer().setVisible(true);
             }

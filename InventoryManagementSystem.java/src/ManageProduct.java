@@ -95,15 +95,15 @@ public class ManageProduct extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Manage Product");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 14, 325, -1));
+        jLabel1.setText("Organizar Produtos");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, 400, -1));
 
         tableProduct.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Name", "Quantity", "Price", "Description", "Category ID", "Category Name"
+                "ID", "Nome", "Quantidade", "Preço", "Descrição", "Categoria ID", "Nome Categoria"
             }
         ));
         tableProduct.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -117,7 +117,7 @@ public class ManageProduct extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Name");
+        jLabel2.setText("Nome");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 129, 61, -1));
 
         txtName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -125,7 +125,7 @@ public class ManageProduct extends javax.swing.JFrame {
 
         lblQuantity.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblQuantity.setForeground(new java.awt.Color(0, 0, 0));
-        lblQuantity.setText("Quantity");
+        lblQuantity.setText("Quantidade");
         getContentPane().add(lblQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 191, 74, -1));
 
         txtQuantity.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -133,7 +133,7 @@ public class ManageProduct extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("Price");
+        jLabel4.setText("Preço");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 253, 74, -1));
 
         txtPrice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -141,7 +141,7 @@ public class ManageProduct extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Description");
+        jLabel5.setText("Descrição");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 315, 91, -1));
 
         txtDescription.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -149,7 +149,7 @@ public class ManageProduct extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Category");
+        jLabel6.setText("Categoria");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 377, 360, -1));
 
         comboBoxCategory.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -157,7 +157,7 @@ public class ManageProduct extends javax.swing.JFrame {
         getContentPane().add(comboBoxCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 404, 330, -1));
 
         btnSave.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnSave.setText("Save");
+        btnSave.setText("Salvar");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
@@ -166,7 +166,7 @@ public class ManageProduct extends javax.swing.JFrame {
         getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(484, 447, 72, -1));
 
         btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnUpdate.setText("Update");
+        btnUpdate.setText("Atualizar");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
@@ -175,16 +175,16 @@ public class ManageProduct extends javax.swing.JFrame {
         getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(568, 447, 72, -1));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnReset.setText("Reset");
+        btnReset.setText("Recarregar");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
             }
         });
-        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 447, 73, -1));
+        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(652, 447, 80, -1));
 
         btnClose.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        btnClose.setText("Close");
+        btnClose.setText("Fechar");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCloseActionPerformed(evt);
@@ -237,7 +237,7 @@ public class ManageProduct extends javax.swing.JFrame {
         String categoryId[] = category.split("-",0);
         
         if(validateFields("edit")){
-            JOptionPane.showMessageDialog(null, "All fields are required");
+            JOptionPane.showMessageDialog(null, "Todos os campos sao necessarios!");
         }
         else{
             try{
@@ -253,7 +253,7 @@ public class ManageProduct extends javax.swing.JFrame {
                 ps.setString(5, categoryId[0]);
                 ps.setInt(6, productPk);
                 ps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Product Updated successfully");
+                JOptionPane.showMessageDialog(null, "Produto atualizado com sucesso!");
                 setVisible(false);
                 new ManageProduct().setVisible(true);
             }
@@ -273,7 +273,7 @@ public class ManageProduct extends javax.swing.JFrame {
         String categoryId[] = category.split("-",0);
         
         if(validateFields("new")){
-            JOptionPane.showMessageDialog(null, "All fields are required");
+            JOptionPane.showMessageDialog(null, "Todos os campos sao necessarios!");
         }
         else{
             try{
@@ -285,7 +285,7 @@ public class ManageProduct extends javax.swing.JFrame {
                 ps.setString(4, description);
                 ps.setString(5, categoryId[0]);
                 ps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "Product Added successfully");
+                JOptionPane.showMessageDialog(null, "Produto adicionado com sucesso");
                 setVisible(false);
                 new ManageProduct().setVisible(true);
             }
@@ -307,7 +307,7 @@ public class ManageProduct extends javax.swing.JFrame {
         
         String quantity = model.getValueAt(index, 2).toString();
         totalQuantity = 0;
-        lblQuantity.setText("Add Quantity");
+        lblQuantity.setText("Adicionar Quantidade");
         totalQuantity = Integer.parseInt(quantity);
         
         String price = model.getValueAt(index, 3).toString();

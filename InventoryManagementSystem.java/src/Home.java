@@ -41,7 +41,8 @@ public class Home extends javax.swing.JFrame {
         btnCustomer = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        btnOrder = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -51,49 +52,49 @@ public class Home extends javax.swing.JFrame {
         btnUser.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnUser.setForeground(new java.awt.Color(0, 0, 0));
         btnUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Users.png"))); // NOI18N
-        btnUser.setText("User");
+        btnUser.setText("Usuários");
         btnUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUserActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 106, -1));
+        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 140, -1));
 
         BtnCategory.setBackground(new java.awt.Color(255, 255, 255));
         BtnCategory.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         BtnCategory.setForeground(new java.awt.Color(0, 0, 0));
         BtnCategory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/category.png"))); // NOI18N
-        BtnCategory.setText("Category");
+        BtnCategory.setText("Categorias");
         BtnCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BtnCategoryActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, 150, -1));
+        getContentPane().add(BtnCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 150, -1));
 
         btnProduct.setBackground(new java.awt.Color(255, 255, 255));
         btnProduct.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnProduct.setForeground(new java.awt.Color(0, 0, 0));
         btnProduct.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/product.png"))); // NOI18N
-        btnProduct.setText("Product");
+        btnProduct.setText("Produtos");
         btnProduct.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnProductActionPerformed(evt);
             }
         });
-        getContentPane().add(btnProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 140, -1));
+        getContentPane().add(btnProduct, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, 140, -1));
 
         btnCustomer.setBackground(new java.awt.Color(255, 255, 255));
         btnCustomer.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btnCustomer.setForeground(new java.awt.Color(0, 0, 0));
         btnCustomer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/customers.png"))); // NOI18N
-        btnCustomer.setText("Customer");
+        btnCustomer.setText("Clientes");
         btnCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCustomerActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 10, 160, -1));
+        getContentPane().add(btnCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 160, -1));
 
         btnLogout.setBackground(new java.awt.Color(255, 255, 255));
         btnLogout.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -105,17 +106,29 @@ public class Home extends javax.swing.JFrame {
                 btnLogoutActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 10, 133, -1));
+        getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 133, -1));
 
         jButton7.setBackground(new java.awt.Color(255, 255, 255));
         jButton7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jButton7.setForeground(new java.awt.Color(0, 0, 0));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Orders.png"))); // NOI18N
-        jButton7.setText("View Order");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(845, 10, 170, -1));
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View-orders.png"))); // NOI18N
+        jButton7.setText("Visualizar pedidos");
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, 200, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home_background.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        btnOrder.setBackground(new java.awt.Color(255, 255, 255));
+        btnOrder.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnOrder.setForeground(new java.awt.Color(0, 0, 0));
+        btnOrder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Orders.png"))); // NOI18N
+        btnOrder.setText("Pedidos");
+        btnOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrderActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, 134, 50));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/home_background.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -148,6 +161,11 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         new ManageProduct().setVisible(true);
     }//GEN-LAST:event_btnProductActionPerformed
+
+    private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
+        // TODO add your handling code here:
+        new ManageOrder().setVisible(true);
+    }//GEN-LAST:event_btnOrderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -188,9 +206,10 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton BtnCategory;
     private javax.swing.JButton btnCustomer;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnOrder;
     private javax.swing.JButton btnProduct;
     private javax.swing.JButton btnUser;
     private javax.swing.JButton jButton7;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

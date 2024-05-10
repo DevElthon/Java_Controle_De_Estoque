@@ -89,15 +89,15 @@ public class ManageUser extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Impact", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("Manage User");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 6, -1, -1));
+        jLabel1.setText("Organizar usuários");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, 330, -1));
 
         tableUser.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Name", "Mobile Number", "Email", "Address", "Status"
+                "ID", "Nome", "Telefone", "Email", "Endereço", "Status"
             }
         ));
         tableUser.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,7 +111,7 @@ public class ManageUser extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Name");
+        jLabel2.setText("Nome");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 63, 41, -1));
 
         txtName.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -124,7 +124,7 @@ public class ManageUser extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Mobile Number");
+        jLabel3.setText("Telefone");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 137, -1, -1));
 
         txtMobileNumber.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -140,7 +140,7 @@ public class ManageUser extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Address");
+        jLabel5.setText("Endereço");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 285, -1, -1));
 
         txtAdress.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -162,7 +162,7 @@ public class ManageUser extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("Password");
+        jLabel7.setText("Senha");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(486, 359, 330, -1));
 
         txtPassword.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -171,7 +171,7 @@ public class ManageUser extends javax.swing.JFrame {
         btnSave.setBackground(new java.awt.Color(102, 102, 102));
         btnSave.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnSave.setForeground(new java.awt.Color(255, 255, 255));
-        btnSave.setText("Save");
+        btnSave.setText("Salvar");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSaveActionPerformed(evt);
@@ -182,7 +182,7 @@ public class ManageUser extends javax.swing.JFrame {
         btnUpdate.setBackground(new java.awt.Color(102, 102, 102));
         btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnUpdate.setForeground(new java.awt.Color(255, 255, 255));
-        btnUpdate.setText("Update");
+        btnUpdate.setText("Atualizar");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
@@ -193,7 +193,7 @@ public class ManageUser extends javax.swing.JFrame {
         btnReset.setBackground(new java.awt.Color(102, 102, 102));
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnReset.setForeground(new java.awt.Color(255, 255, 255));
-        btnReset.setText("Reset");
+        btnReset.setText("Recarregar");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResetActionPerformed(evt);
@@ -204,7 +204,7 @@ public class ManageUser extends javax.swing.JFrame {
         btnClose.setBackground(new java.awt.Color(102, 102, 102));
         btnClose.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnClose.setForeground(new java.awt.Color(255, 255, 255));
-        btnClose.setText("Close");
+        btnClose.setText("Fechar");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCloseActionPerformed(evt);
@@ -257,7 +257,7 @@ public class ManageUser extends javax.swing.JFrame {
         String status = (String) comboBoxStatus.getSelectedItem();
         
         if(validateFields("new")){
-            JOptionPane.showMessageDialog(null, "All field are required!");
+            JOptionPane.showMessageDialog(null, "Todos os campos sao necessarios!");
         }
         else{
             try{
@@ -270,7 +270,7 @@ public class ManageUser extends javax.swing.JFrame {
                 ps.setString(5, adress);
                 ps.setString(6, status);
                 ps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "User Added Successfully");
+                JOptionPane.showMessageDialog(null, "Usuario adicionado com sucesso!");
                 setVisible(false);
                 new ManageUser().setVisible(true);
             }
@@ -327,7 +327,7 @@ public class ManageUser extends javax.swing.JFrame {
         String status = (String) comboBoxStatus.getSelectedItem();
         
         if(validateFields("edit")){
-            JOptionPane.showMessageDialog(null, "All field are required!");
+            JOptionPane.showMessageDialog(null, "Todos os campos sao necessarios!");
         }
         else{
             try{
@@ -340,7 +340,7 @@ public class ManageUser extends javax.swing.JFrame {
                 ps.setString(5, status);
                 ps.setInt(6, appuserPk);
                 ps.executeUpdate();
-                JOptionPane.showMessageDialog(null, "User Updated Successfully");
+                JOptionPane.showMessageDialog(null, "Usuario atualizado com sucesso!");
                 setVisible(false);
                 new ManageUser().setVisible(true);
             }
