@@ -1,9 +1,21 @@
 
+import com.itextpdf.text.BaseColor;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import common.OpenPdf;
+import static common.OpenPdf.OpenById;
 import java.sql.*;
 import dao.ConnectionProvider;
+import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import dao.*;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -155,6 +167,11 @@ public class ManageOrder extends javax.swing.JFrame {
                 "Produto ID", "Nome", "Quantidade", "Preço", "Descrição", "Subtotal"
             }
         ));
+        tableCart.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableCartMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(tableCart);
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 146, 324, 199));
@@ -324,6 +341,99 @@ public class ManageOrder extends javax.swing.JFrame {
 
     private void btnSaveOrderDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveOrderDetailsActionPerformed
         // TODO add your handling code here:
+        if(finalTotalPrice != 0 && !txtCustomerName.getText().equals("")){
+            orderId = getUniqueID("Conta-");
+            
+            DefaultTableModel dtm = (DefaultTableModel) tableCart.getModel();
+            if(tableCart.getRowCount() != 0){
+                for(int i=0; i<tableCart.getRowCount(); i++){
+                    try{
+                        Connection con = ConnectionProvider.getCon();
+                        Statement st = con.createStatement();
+                        st.executeUpdate("UPDATE product SET quantity=quantity-"
+                                + Integer.parseInt(dtm.getValueAt(i, 2).toString()) 
+                                + " WHERE product_pk="+ Integer.parseInt(dtm.getValueAt(i,0).toString()));
+                    }
+                    catch(Exception e){
+                        JOptionPane.showMessageDialog(null, e);
+                    }
+                }
+            }
+            try {
+                SimpleDateFormat myFormat = new SimpleDateFormat("dd-MM-yyyy");
+                Calendar cal = Calendar.getInstance();
+                Connection con = ConnectionProvider.getCon();
+                PreparedStatement ps = con.prepareStatement("INSERT INTO orderDetail(orderId, customer_fk, orderDate, totalPaid) values(?,?,?,?)");
+                ps.setString(1, orderId);
+                ps.setInt(2, customerPk);
+                ps.setString(3,myFormat.format(cal.getTime()));
+                ps.setInt(4, finalTotalPrice);
+                ps.executeUpdate();
+            } 
+            catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+            
+            //Creating Document
+            com.itextpdf.text.Document doc = new com.itextpdf.text.Document();
+            try{
+                SimpleDateFormat myFormat = new SimpleDateFormat("dd-MM-yyyy");
+                Calendar cal = Calendar.getInstance();
+                
+                PdfWriter.getInstance(doc, new FileOutputStream(InventoryUtils.billPath+""+orderId+".pdf"));
+                doc.open();
+                Paragraph projectName = new Paragraph("                                        Sistem de gerenciamento de loja e estoque\n");
+                doc.add(projectName);
+                Paragraph starLine = new Paragraph("************************************************************************************************************");
+                doc.add(starLine);
+                Paragraph details = new Paragraph("\tPedido_ID: "+orderId + 
+                        "\nData: " + myFormat.format(cal.getTime()) +"\nTotal pago: " + finalTotalPrice);
+                doc.add(details);
+                doc.add(starLine);
+                PdfPTable tb1 = new PdfPTable(5);
+                PdfPCell nameCell = new PdfPCell(new Phrase("Nome"));
+                PdfPCell descriptionCell = new PdfPCell(new Phrase("Descricoo"));
+                PdfPCell priceCell = new PdfPCell(new Phrase("Preco por unidade"));
+                PdfPCell quantityCell = new PdfPCell(new Phrase("Quantidade"));
+                PdfPCell subTotalPriceCell = new PdfPCell(new Phrase("Preco Sub Total"));
+                
+                BaseColor backgroundColor = new BaseColor(255, 204,51);
+                nameCell.setBackgroundColor(backgroundColor);
+                descriptionCell.setBackgroundColor(backgroundColor);
+                priceCell.setBackgroundColor(backgroundColor);
+                quantityCell.setBackgroundColor(backgroundColor);
+                subTotalPriceCell.setBackgroundColor(backgroundColor);
+                
+                tb1.addCell(nameCell);
+                tb1.addCell(descriptionCell);
+                tb1.addCell(priceCell);
+                tb1.addCell(quantityCell);
+                tb1.addCell(subTotalPriceCell);
+                
+                for (int i=0; i<tableCart.getRowCount();i++){
+                    tb1.addCell(tableCart.getValueAt(i, 1).toString());
+                    tb1.addCell(tableCart.getValueAt(i, 4).toString());
+                    tb1.addCell(tableCart.getValueAt(i, 3).toString());
+                    tb1.addCell(tableCart.getValueAt(i, 2).toString());
+                    tb1.addCell(tableCart.getValueAt(i, 5).toString());
+                }
+                
+                doc.add(tb1);
+                doc.add(starLine);
+                Paragraph thanksMsg = new Paragraph("Obrigado, volte sempre.");
+                doc.add(thanksMsg);
+                OpenPdf.OpenById(orderId);
+            }
+            catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+            }
+            doc.close();
+            setVisible(false);
+            new ManageOrder().setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Por favor, adicione um item ao carrinho ou selecione um cliente");
+        }
     }//GEN-LAST:event_btnSaveOrderDetailsActionPerformed
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
@@ -425,6 +535,20 @@ public class ManageOrder extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Quantidade e produto sao necessarios!");
         }
     }//GEN-LAST:event_btnAddToCartActionPerformed
+
+    private void tableCartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableCartMouseClicked
+        // TODO add your handling code here:
+        int index = tableCart.getSelectedRow();
+        int a = JOptionPane.showConfirmDialog(null,"Gostaria de remover este item ?","Selecione", JOptionPane.YES_NO_OPTION);
+        if(a == 0){
+            TableModel model = tableCart.getModel();
+            String subTotal = model.getValueAt(index, 5).toString();
+            finalTotalPrice -= Integer.parseInt(subTotal);
+            lblFinalTotalPrice.setText(String.valueOf(finalTotalPrice));
+            ((DefaultTableModel) tableCart.getModel()).removeRow(index);
+        }
+        
+    }//GEN-LAST:event_tableCartMouseClicked
 
     /**
      * @param args the command line arguments

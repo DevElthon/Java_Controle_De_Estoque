@@ -40,7 +40,7 @@ public class Home extends javax.swing.JFrame {
         btnProduct = new javax.swing.JButton();
         btnCustomer = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btnViewOrder = new javax.swing.JButton();
         btnOrder = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
@@ -108,12 +108,17 @@ public class Home extends javax.swing.JFrame {
         });
         getContentPane().add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, 133, -1));
 
-        jButton7.setBackground(new java.awt.Color(255, 255, 255));
-        jButton7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(0, 0, 0));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View-orders.png"))); // NOI18N
-        jButton7.setText("Visualizar pedidos");
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, 200, 50));
+        btnViewOrder.setBackground(new java.awt.Color(255, 255, 255));
+        btnViewOrder.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnViewOrder.setForeground(new java.awt.Color(0, 0, 0));
+        btnViewOrder.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/View-orders.png"))); // NOI18N
+        btnViewOrder.setText("Visualizar pedidos");
+        btnViewOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewOrderActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnViewOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 10, 200, 50));
 
         btnOrder.setBackground(new java.awt.Color(255, 255, 255));
         btnOrder.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -167,6 +172,11 @@ public class Home extends javax.swing.JFrame {
         new ManageOrder().setVisible(true);
     }//GEN-LAST:event_btnOrderActionPerformed
 
+    private void btnViewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderActionPerformed
+        // TODO add your handling code here:
+        new ViewOrders().setVisible(true);
+    }//GEN-LAST:event_btnViewOrderActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -209,7 +219,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnOrder;
     private javax.swing.JButton btnProduct;
     private javax.swing.JButton btnUser;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton btnViewOrder;
     private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
