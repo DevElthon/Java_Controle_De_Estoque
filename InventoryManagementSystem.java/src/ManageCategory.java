@@ -114,7 +114,7 @@ public class ManageCategory extends javax.swing.JFrame {
                 btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(563, 261, 80, -1));
+        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(553, 261, 90, -1));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnReset.setText("Recarregar");
@@ -123,7 +123,7 @@ public class ManageCategory extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
-        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(664, 261, 80, -1));
+        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(654, 261, 100, -1));
 
         btnClose.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnClose.setText("Fechar");

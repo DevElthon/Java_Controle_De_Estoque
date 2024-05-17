@@ -177,7 +177,7 @@ public class ManageUser extends javax.swing.JFrame {
                 btnSaveActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 510, 71, -1));
+        getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 510, 71, -1));
 
         btnUpdate.setBackground(new java.awt.Color(102, 102, 102));
         btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -188,7 +188,7 @@ public class ManageUser extends javax.swing.JFrame {
                 btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 510, 80, -1));
+        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, 90, -1));
 
         btnReset.setBackground(new java.awt.Color(102, 102, 102));
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -199,7 +199,7 @@ public class ManageUser extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
-        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 510, 80, -1));
+        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 510, 100, -1));
 
         btnClose.setBackground(new java.awt.Color(102, 102, 102));
         btnClose.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -210,7 +210,7 @@ public class ManageUser extends javax.swing.JFrame {
                 btnCloseActionPerformed(evt);
             }
         });
-        getContentPane().add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(746, 509, 70, -1));
+        getContentPane().add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 510, 70, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/All_page_Background.png"))); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

@@ -131,7 +131,7 @@ public class ManageCustomer extends javax.swing.JFrame {
                 btnSaveActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 374, 70, -1));
+        getContentPane().add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 374, 70, -1));
 
         btnUpdate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnUpdate.setText("Atualizar");
@@ -140,7 +140,7 @@ public class ManageCustomer extends javax.swing.JFrame {
                 btnUpdateActionPerformed(evt);
             }
         });
-        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(577, 374, 72, -1));
+        getContentPane().add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 374, 80, -1));
 
         btnReset.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnReset.setText("Recarregar");
@@ -149,7 +149,7 @@ public class ManageCustomer extends javax.swing.JFrame {
                 btnResetActionPerformed(evt);
             }
         });
-        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(661, 374, 80, -1));
+        getContentPane().add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(651, 374, 100, -1));
 
         btnClose.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnClose.setText("Fechar");
@@ -158,7 +158,7 @@ public class ManageCustomer extends javax.swing.JFrame {
                 btnCloseActionPerformed(evt);
             }
         });
-        getContentPane().add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(753, 374, 72, -1));
+        getContentPane().add(btnClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(763, 374, 70, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/All_page_Background.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 600));
