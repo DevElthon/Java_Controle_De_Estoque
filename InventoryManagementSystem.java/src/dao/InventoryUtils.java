@@ -9,5 +9,5 @@ package dao;
  * @author eltho
  */
 public class InventoryUtils {
-    public static String billPath = "E:\\";
+    public static String billPath = "C:\\";
 }
