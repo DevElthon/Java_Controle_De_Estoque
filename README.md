@@ -7,7 +7,7 @@ um software de gestão de produtos e processador de pedidos.
 - JDK 22
 - Mysql Server
 
-#Setup da aplicação:
+# Setup da aplicação:
 
 No MySQL server Cliente, execute a linha: CREATE DATABASE inventory;
 
