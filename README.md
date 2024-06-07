@@ -8,6 +8,7 @@ um software de gestão de produtos e processador de pedidos.
 - Mysql Server
 
 #Setup da aplicação:
+
 No MySQL server Cliente, execute a linha: CREATE DATABASE inventory;
 
 Para rodar a primeira vez, é necessário instalar as bibliotecas disponibilizadas no diretório
