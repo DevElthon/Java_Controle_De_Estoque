@@ -3,7 +3,7 @@
 A aplicação foi desenvolvida utilizando Java e Swing JFrame. O objetivo da mesma é servir como 
 um software de gestão de produtos e processador de pedidos.
 
-Link para documentação: https://drive.google.com/file/d/1E1hY2uK9nFMxWjFeQuTbO5SIZ0wYpL2C/view?usp=sharing
+Link para documentação: https://drive.google.com/file/d/10lfnCX2RWn4kszGc8U7T6JrAYhdmvaYf/view?usp=sharing
 
 # Requisitos para rodar aplicação:
 - JDK 22
