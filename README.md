@@ -3,6 +3,8 @@
 A aplicação foi desenvolvida utilizando Java e Swing JFrame. O objetivo da mesma é servir como 
 um software de gestão de produtos e processador de pedidos.
 
+Link para documentação: https://drive.google.com/file/d/1E1hY2uK9nFMxWjFeQuTbO5SIZ0wYpL2C/view?usp=sharing
+
 # Requisitos para rodar aplicação:
 - JDK 22
 - Mysql Server
